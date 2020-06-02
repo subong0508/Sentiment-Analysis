@@ -15,7 +15,7 @@ def preprocess(file):
                 idx = line.find("리뷰")
                 review = line[idx:].strip("리뷰:").strip("\n").strip("\t")
                 cleaned_review = re.sub(r'[^\w\d\s]','', review)
-                reviews.append(cleaned_review)
+                reviews.append(cleaned_review.lower())
 
     return reviews, scores
 
