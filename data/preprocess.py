@@ -13,7 +13,7 @@ def preprocess(file):
                 score = line[:6].lstrip("평점: ").rstrip()
                 scores.append(1 if int(score) > 7 else 0)
                 idx = line.find("리뷰")
-                review = line[idx:].strip("리뷰:").strip("\n").strip("\t")
+                review = line[idx:].strip("리뷰: ").strip("\n").strip("\t")
                 cleaned_review = re.sub(r'[^\w\d\s]','', review)
                 reviews.append(cleaned_review.lower())
 
